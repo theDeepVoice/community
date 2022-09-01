@@ -7,35 +7,61 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * 帖子表
+ * 评论表
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DiscussPost {
+public class Comment {
 
     private int id;
+
+    /**
+     * 用户id
+     */
     private int userId;
-    private String title;
+
+    /**
+     * 实体类型
+     */
+    private int entityType;
+
+    /**
+     * 实体编号
+     */
+    private int entityId;
+
+    /**
+     * 评论目标用户id
+     */
+    private int targetId;
+
+    /**
+     * 评论内容
+     */
     private String content;
-    private int type;
+
+    /**
+     * 状态
+     */
     private int status;
+
+    /**
+     * 创建时间
+     */
     private Date createTime;
-    private int commentCount;
-    private double score;
 
     @Override
     public String toString() {
-        return "DiscussPost{" +
+        return "Comment{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", title='" + title + '\'' +
+                ", entityType=" + entityType +
+                ", entityId=" + entityId +
+                ", targetId=" + targetId +
                 ", content='" + content + '\'' +
-                ", type=" + type +
                 ", status=" + status +
                 ", createTime=" + createTime +
-                ", commentCount=" + commentCount +
-                ", score=" + score +
                 '}';
     }
 

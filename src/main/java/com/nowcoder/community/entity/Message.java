@@ -6,37 +6,53 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-/**
- * 帖子表
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DiscussPost {
+public class Message {
 
     private int id;
-    private int userId;
-    private String title;
+
+    /**
+     * 发送消息用户id
+     */
+    private int fromId;
+
+    /**
+     * 接收消息用户id
+     */
+    private int toId;
+
+    /**
+     * 对话id： 110_112
+     */
+    private String conversationId;
+
+    /**
+     * 对话内容
+     */
     private String content;
-    private int type;
+
+    /**
+     * 状态
+     */
     private int status;
+
+    /**
+     * 创建时间
+     */
     private Date createTime;
-    private int commentCount;
-    private double score;
 
     @Override
     public String toString() {
-        return "DiscussPost{" +
+        return "Message{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", title='" + title + '\'' +
+                ", fromId=" + fromId +
+                ", toId=" + toId +
+                ", conversationId='" + conversationId + '\'' +
                 ", content='" + content + '\'' +
-                ", type=" + type +
                 ", status=" + status +
                 ", createTime=" + createTime +
-                ", commentCount=" + commentCount +
-                ", score=" + score +
                 '}';
     }
-
 }
