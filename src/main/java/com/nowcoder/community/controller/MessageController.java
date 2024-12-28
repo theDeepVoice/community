@@ -142,6 +142,7 @@ public class MessageController {
         messageService.addMessage(message);
 
         return CommunityUtil.getJsonString(0);
+
     }
 
 }
